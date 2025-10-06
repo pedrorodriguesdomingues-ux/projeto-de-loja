@@ -3,11 +3,11 @@
 
 /* Reset Básico e Cores */
 :root {
-    --primary-color: #000; /* Preto principal */
+    --primary-color: #b35a5a; /* Preto principal */
     --secondary-color: #fff; /* Branco principal */
-    --link-color: #007185; /* Um azul sutil para links, como o da Amazon */
-    --highlight-color: #ff9900; /* Destaque sutil (pode ser usado para botões) */
-    --background-light: #f3f3f3; /* Fundo cinza claro */
+    --link-color: #32bbd3; /* Um azul sutil para links, como o da Amazon */
+    --highlight-color: #312f2b; /* Destaque sutil (pode ser usado para botões) */
+    --background-light: #da2424; /* Fundo cinza claro */
 }
 
 * {
