@@ -1,0 +1,244 @@
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset Básico e Cores */
+:root {
+    --primary-color: #000; /* Preto principal */
+    --secondary-color: #fff; /* Branco principal */
+    --link-color: #007185; /* Um azul sutil para links, como o da Amazon */
+    --highlight-color: #ff9900; /* Destaque sutil (pode ser usado para botões) */
+    --background-light: #f3f3f3; /* Fundo cinza claro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color); /* Links no Header serão brancos */
+}
+
+/* --- Cabeçalho (Header) --- */
+.header {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.logo-sufixo {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--highlight-color); /* Laranja sutil no ".com" */
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    display: flex;
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+    max-width: 600px;
+    margin: 0 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: var(--highlight-color);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.search-bar button:hover {
+    background-color: #f7b841; 
+}
+
+/* Links de Navegação */
+.nav-links a {
+    margin-left: 15px;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-size: 18px; /* Ícone um pouco maior */
+}
+
+#cart-count {
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+/* Banner/Carrossel */
+.hero-banner {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-banner p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Grid de Produtos (o clone do layout Amazon) */
+.product-grid-container {
+    display: grid;
+    /* 4 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+.product-card {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.card-image-placeholder {
+    height: 200px;
+    background-color: var(--background-light);
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-style: italic;
+}
+
+.card-link {
+    color: var(--link-color); /* Links em azul, como na Amazon */
+    font-size: 0.9em;
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+.card-link:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
+
+/* --- Rodapé (Footer) --- */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    margin: 0 5px;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+/* Mídia Query para Responsividade */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 0;
+        order: 3;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+    }
+
+    .logo {
+        align-self: flex-start;
+    }
+
+    .product-grid-container {
+        grid-template-columns: 1fr; /* Apenas uma coluna em telas menores */
+    }
+}
